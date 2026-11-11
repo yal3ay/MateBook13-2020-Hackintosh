@@ -2,14 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>#WARNING - 1</key>
-	<string>This is just a sample. Do NOT try loading it.</string>
-	<key>#WARNING - 2</key>
-	<string>Ensure you understand EVERY field before booting.</string>
-	<key>#WARNING - 3</key>
-	<string>In most cases recommended to use Sample.plist</string>
-	<key>#WARNING - 4</key>
-	<string>Use SampleCustom.plist only for special cases.</string>
 	<key>ACPI</key>
 	<dict>
 		<key>Add</key>
@@ -42,7 +34,7 @@
 				<key>Comment</key>
 				<string>[Functional] Enables Ambient Light Sensor (ALSD)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-ALS0.aml</string>
 			</dict>
@@ -106,7 +98,7 @@
 				<key>Comment</key>
 				<string>[Functional] Allows the kernel's XCPM(XNU's CPU Power Management) to manage CPU's power management.</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-PLUG.aml</string>
 			</dict>
@@ -122,7 +114,7 @@
 				<key>Comment</key>
 				<string>[Functional] Adds Backlight Control for Laptop Screens.</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-PNLF-CFL.aml</string>
 			</dict>
@@ -138,7 +130,7 @@
 				<key>Comment</key>
 				<string>[Functional] Spoof fake ethernet controller with NullEthernet.</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-RMNE.aml</string>
 			</dict>
@@ -162,7 +154,7 @@
 				<key>Comment</key>
 				<string>[Cosmetic] Adds Platform Controller Hub (PCH) to IORegistry.</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-XSPI.aml</string>
 			</dict>
@@ -820,7 +812,7 @@
 				<key>BundlePath</key>
 				<string>Lilu.kext</string>
 				<key>Comment</key>
-				<string>1.7.2</string>
+				<string>V1.7.2</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -836,9 +828,27 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
+				<string>RestrictEvents.kext</string>
+				<key>Comment</key>
+				<string>1.1.6 | OTA updates with SecureBootModel Disabled (revpatch=sbvmm)</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/RestrictEvents</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string>20.0.0</string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
 				<string>MatebookUVCFix.kext</string>
 				<key>Comment</key>
-				<string>0.3.0 | camera (13d3:56c6) UVC 1.5 probe fix</string>
+				<string>V0.3.0 | 13d3:56c6 UVC1.5 probe fix, Darwin 22-25, symbol+prologue guarded</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -856,7 +866,7 @@
 				<key>BundlePath</key>
 				<string>MatebookGVAFix.kext</string>
 				<key>Comment</key>
-				<string>0.4.1 | HEVC hardware encode fix (macOS 15)</string>
+				<string>V0.4.1 self-locating HEVC fix</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -874,7 +884,7 @@
 				<key>BundlePath</key>
 				<string>VirtualSMC.kext</string>
 				<key>Comment</key>
-				<string>1.3.8</string>
+				<string>V1.3.8</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -892,7 +902,7 @@
 				<key>BundlePath</key>
 				<string>WhateverGreen.kext</string>
 				<key>Comment</key>
-				<string>1.7.1</string>
+				<string>V1.7.1</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -910,7 +920,7 @@
 				<key>BundlePath</key>
 				<string>AppleALC.kext</string>
 				<key>Comment</key>
-				<string>1.9.8 | layout-id 21</string>
+				<string>Sequoia candidate; runtime validation pending</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -928,7 +938,7 @@
 				<key>BundlePath</key>
 				<string>VerbStub.kext</string>
 				<key>Comment</key>
-				<string>1.0.3 | headset jack verbs (optional)</string>
+				<string>V1.0.3 | [Audio] Fixes combojack microphone.</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -946,7 +956,7 @@
 				<key>BundlePath</key>
 				<string>USBMap.kext</string>
 				<key>Comment</key>
-				<string>1.1.0 | codeless USB map, 6 ports</string>
+				<string>USBMap (codeless, 6 ports) replaces USBInjectAll</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -964,7 +974,7 @@
 				<key>BundlePath</key>
 				<string>VoodooI2C.kext/Contents/PlugIns/VoodooGPIO.kext</string>
 				<key>Comment</key>
-				<string>VoodooI2C plugin</string>
+				<string>V1.1 | [Touchpad] I2C touchpad driver framework.</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -982,7 +992,7 @@
 				<key>BundlePath</key>
 				<string>VoodooI2C.kext/Contents/PlugIns/VoodooI2CServices.kext</string>
 				<key>Comment</key>
-				<string>VoodooI2C plugin</string>
+				<string>V1 | [Touchpad] I2C touchpad driver framework.</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1000,7 +1010,7 @@
 				<key>BundlePath</key>
 				<string>VoodooI2C.kext/Contents/PlugIns/VoodooInput.kext</string>
 				<key>Comment</key>
-				<string>VoodooI2C plugin</string>
+				<string>V1.1.3 | [Touchpad] I2C touchpad gesture provider.</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1018,7 +1028,7 @@
 				<key>BundlePath</key>
 				<string>VoodooI2C.kext</string>
 				<key>Comment</key>
-				<string>2.9.1</string>
+				<string>V2.9.1 | [Touchpad] I2C touchpad driver framework.</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1036,7 +1046,7 @@
 				<key>BundlePath</key>
 				<string>VoodooI2CHID.kext</string>
 				<key>Comment</key>
-				<string>2.9.1</string>
+				<string>V1 | [Touchpad] I2C HID touchpad driver.</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1054,7 +1064,7 @@
 				<key>BundlePath</key>
 				<string>VoodooPS2Controller.kext</string>
 				<key>Comment</key>
-				<string>2.3.7 | custom F-key map in Info.plist</string>
+				<string>V2.3.1 | [PS2] PS/2 keyboard / touchpad driver framework.</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1072,7 +1082,7 @@
 				<key>BundlePath</key>
 				<string>VoodooPS2Controller.kext/Contents/PlugIns/VoodooInput.kext</string>
 				<key>Comment</key>
-				<string>VoodooPS2Controller plugin</string>
+				<string>V1.1.3 | [Touchpad] PS/2 touchpad gesture provider.</string>
 				<key>Enabled</key>
 				<false/>
 				<key>ExecutablePath</key>
@@ -1090,7 +1100,7 @@
 				<key>BundlePath</key>
 				<string>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext</string>
 				<key>Comment</key>
-				<string>VoodooPS2Controller plugin</string>
+				<string>V2.3.1 | [Keyboard] PS/2 keyboard driver.</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1108,7 +1118,7 @@
 				<key>BundlePath</key>
 				<string>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Mouse.kext</string>
 				<key>Comment</key>
-				<string>VoodooPS2Controller plugin</string>
+				<string>V2.3.1 | [Touchpad] PS/2 touchpad driver.</string>
 				<key>Enabled</key>
 				<false/>
 				<key>ExecutablePath</key>
@@ -1126,7 +1136,7 @@
 				<key>BundlePath</key>
 				<string>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Trackpad.kext</string>
 				<key>Comment</key>
-				<string>VoodooPS2Controller plugin</string>
+				<string>V2.3.1 | [Touchpad] PS/2 touchpad driver.</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1144,7 +1154,7 @@
 				<key>BundlePath</key>
 				<string>SMCBatteryManager.kext</string>
 				<key>Comment</key>
-				<string>1.3.8</string>
+				<string>V1.3.8</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1162,7 +1172,7 @@
 				<key>BundlePath</key>
 				<string>SMCLightSensor.kext</string>
 				<key>Comment</key>
-				<string>1.3.8</string>
+				<string>V1.3.8</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1180,7 +1190,7 @@
 				<key>BundlePath</key>
 				<string>SMCProcessor.kext</string>
 				<key>Comment</key>
-				<string>1.3.8</string>
+				<string>V1.3.8</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1198,9 +1208,9 @@
 				<key>BundlePath</key>
 				<string>NullEthernet.kext</string>
 				<key>Comment</key>
-				<string>1.0.6</string>
+				<string>V1.0.6 | [Ethernet] Fake ethernet controller.</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/NullEthernet</string>
 				<key>MaxKernel</key>
@@ -1216,7 +1226,7 @@
 				<key>BundlePath</key>
 				<string>AirportItlwm.kext</string>
 				<key>Comment</key>
-				<string>2.4.0-alpha (laobamac fork, Sequoia build)</string>
+				<string>Sequoia 15.2+ community alpha 7204c69; hardware validation pending</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1234,7 +1244,7 @@
 				<key>BundlePath</key>
 				<string>IntelBluetoothFirmware.kext</string>
 				<key>Comment</key>
-				<string>2.4.0</string>
+				<string>IntelBluetoothFirmware 2.4.0</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1252,7 +1262,7 @@
 				<key>BundlePath</key>
 				<string>IntelBTPatcher.kext</string>
 				<key>Comment</key>
-				<string>2.4.0</string>
+				<string>IntelBTPatcher 2.4.0 - Intel LE initialization fix</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1270,7 +1280,7 @@
 				<key>BundlePath</key>
 				<string>BlueToolFixup.kext</string>
 				<key>Comment</key>
-				<string>2.7.2</string>
+				<string>BlueToolFixup 2.7.2 with required NVRAM values</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1288,7 +1298,7 @@
 				<key>BundlePath</key>
 				<string>NVMeFix.kext</string>
 				<key>Comment</key>
-				<string>1.1.3</string>
+				<string>Sequoia candidate; runtime validation pending</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1306,7 +1316,7 @@
 				<key>BundlePath</key>
 				<string>CPUFriend.kext</string>
 				<key>Comment</key>
-				<string>1.3.0</string>
+				<string>Sequoia candidate; runtime validation pending</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1324,7 +1334,7 @@
 				<key>BundlePath</key>
 				<string>CPUFriendDataProviderDefault.kext</string>
 				<key>Comment</key>
-				<string>EPP 0x40 (default)</string>
+				<string>V1.0.0 | [Processor] CPUFriend config: Default</string>
 				<key>Enabled</key>
 				<false/>
 				<key>ExecutablePath</key>
@@ -1342,7 +1352,7 @@
 				<key>BundlePath</key>
 				<string>CPUFriendDataProviderSave60.kext</string>
 				<key>Comment</key>
-				<string>EPP 0x60</string>
+				<string>V1.0.0 | [Processor] CPUFriend config: Save</string>
 				<key>Enabled</key>
 				<false/>
 				<key>ExecutablePath</key>
@@ -1360,7 +1370,7 @@
 				<key>BundlePath</key>
 				<string>CPUFriendDataProviderSave80.kext</string>
 				<key>Comment</key>
-				<string>EPP 0x80 (cooler, default enabled)</string>
+				<string>V1.0.0 | [Processor] CPUFriend config: Save</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1378,7 +1388,7 @@
 				<key>BundlePath</key>
 				<string>FeatureUnlock.kext</string>
 				<key>Comment</key>
-				<string>1.1.8</string>
+				<string>Sequoia candidate; runtime validation pending</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1396,7 +1406,7 @@
 				<key>BundlePath</key>
 				<string>HibernationFixup.kext</string>
 				<key>Comment</key>
-				<string>1.5.4</string>
+				<string>Sequoia candidate; runtime validation pending</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -1494,7 +1504,9 @@
 	<key>Misc</key>
 	<dict>
 		<key>BlessOverride</key>
-		<array/>
+		<array>
+			<string>\EFI\Microsoft\Boot\bootmgfw-orig.efi</string>
+		</array>
 		<key>Boot</key>
 		<dict>
 			<key>ConsoleAttributes</key>
@@ -1504,11 +1516,11 @@
 			<key>HibernateSkipsPicker</key>
 			<false/>
 			<key>HideAuxiliary</key>
-			<false/>
+			<true/>
 			<key>InstanceIdentifier</key>
 			<string></string>
 			<key>LauncherOption</key>
-			<string>Full</string>
+			<string>Disabled</string>
 			<key>LauncherPath</key>
 			<string>Default</string>
 			<key>PickerAttributes</key>
@@ -1644,7 +1656,7 @@
 				AAAAAAAAAAAAAAAAAAA=
 				</data>
 				<key>boot-args</key>
-				<string>darkwake=2 lilucpu=10 -nvmefaspm</string>
+				<string>darkwake=2 lilucpu=10 -nvmefaspm -vi2c-force-polling revpatch=sbvmm</string>
 				<key>csr-active-config</key>
 				<data>
 				AAAAAA==
@@ -1729,7 +1741,7 @@
 			<key>SystemMemoryStatus</key>
 			<string>Auto</string>
 			<key>SystemProductName</key>
-			<string>MacBookPro16,3</string>
+			<string>MacBookPro16,2</string>
 			<key>SystemSerialNumber</key>
 			<string></string>
 			<key>SystemUUID</key>

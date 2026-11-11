@@ -322,6 +322,8 @@
 					<integer>0</integer>
 					<key>Swap capslock and left control</key>
 					<false/>
+					<key>Swap command and option</key>
+					<true/>
 					<key>Use ISO layout keyboard</key>
 					<false/>
 					<key>alt_handler_id</key>
